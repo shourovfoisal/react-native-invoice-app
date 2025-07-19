@@ -1,15 +1,21 @@
+import { useRouter } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
+  const router = useRouter();
+
   return (
     <SafeAreaView style={styles.container}>
       <Image
         source={require("../assets/images/logo.png")}
         style={styles.logo}
       />
-      <TouchableOpacity style={styles.createButton}>
+      <TouchableOpacity
+        style={styles.createButton}
+        onPress={() => router.navigate("/create-bill")}
+      >
         <Text>Create Bill</Text>
       </TouchableOpacity>
     </SafeAreaView>
@@ -34,6 +40,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "lightblue",
     borderRadius: 5,
-    elevation: 3
-  }
+    elevation: 3,
+  },
 });

@@ -1,3 +1,4 @@
+import { globalStyles } from "@/helpers/styles";
 import { useRouter } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
@@ -13,7 +14,7 @@ export default function Index() {
         style={styles.logo}
       />
       <TouchableOpacity
-        style={styles.createButton}
+        style={globalStyles.button}
         onPress={() => router.navigate("/create-bill")}
       >
         <Text>Create Bill</Text>

@@ -53,7 +53,7 @@ export default function CreateBill() {
       const { uri } = await printToFileAsync({ html });
       console.log(`File saved to ${uri}`);
       await shareAsync(uri, { UTI: ".pdf", mimeType: "application/pdf" });
-      // resetForm();
+      resetForm();
     } catch (error) {
       handleError(
         error,
